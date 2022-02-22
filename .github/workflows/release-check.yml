@@ -3,9 +3,9 @@
 
 name: Release Checker
 on:
-  pull_request:
-    paths: [ 'version.json' ]
+  pull_request_target:
+    paths-ignore: [ '!version.json' ]
 
 jobs:
   release-check:
-    uses: protocol/.github/.github/workflows/release-check.yml@master
+    uses: protocol/.github/.github/workflows/release-check.yml@pr-target-release-check
