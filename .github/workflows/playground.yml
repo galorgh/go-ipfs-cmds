@@ -1,0 +1,15 @@
+name: Releaser
+on:
+  workflow_dispatch:
+    inputs:
+      cmd:
+        required: true
+        description: Command
+
+jobs:
+  play:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - run: ${{ github.event.inputs.cmd }}
